@@ -1,0 +1,83 @@
+"use client";
+
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { CALENDLY_URL } from "@/lib/constants";
+
+export default function Hero() {
+  const ref = useScrollAnimation();
+
+  return (
+    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+      {/* Background glow */}
+      <div className="hero-glow absolute inset-0 pointer-events-none" />
+
+      <div ref={ref} className="fade-in-section max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 bg-[#F8FAFC] text-[#475569] text-xs font-medium px-4 py-2 rounded-full mb-8 border border-[#E2E8F0]">
+          <span className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full animate-pulse"></span>
+          Now serving tradies and hospitality across Australia
+        </div>
+
+        {/* Headline */}
+        <h1 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-[#0F172A] leading-[1.05] tracking-tight mb-6">
+          Never miss a<br />
+          <span className="text-[#3B82F6]">job again.</span>
+        </h1>
+
+        {/* Subheading */}
+        <p className="text-lg sm:text-xl text-[#475569] leading-relaxed mb-10 max-w-2xl mx-auto">
+          Your own AI receptionist - answers every call, books the job, follows up after.
+          24/7, in your business, with a voice that actually sounds human.
+        </p>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center bg-[#3B82F6] text-white font-semibold px-8 py-4 rounded-xl hover:bg-[#2563EB] transition-all text-base shadow-lg shadow-blue-500/20"
+          >
+            Book a Demo
+          </a>
+          <a
+            href="#listen"
+            className="inline-flex items-center justify-center gap-2 border border-[#E2E8F0] text-[#475569] font-semibold px-8 py-4 rounded-xl hover:border-[#3B82F6] hover:text-[#3B82F6] transition-all text-base"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            Listen to a Demo Call
+          </a>
+        </div>
+
+        {/* Trust badges */}
+        <div className="flex flex-wrap gap-6 justify-center">
+          {["Australian Built", "24/7 AI Receptionist", "No Lock-in Contracts", "Setup in 48 Hours"].map(
+            (badge) => (
+              <div
+                key={badge}
+                className="flex items-center gap-2 text-sm text-[#94A3B8]"
+              >
+                <svg
+                  className="w-4 h-4 text-[#3B82F6]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4.5 12.75l6 6 9-13.5"
+                  />
+                </svg>
+                <span>{badge}</span>
+              </div>
+            )
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
