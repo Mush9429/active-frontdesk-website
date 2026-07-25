@@ -6,14 +6,20 @@ import { CALENDLY_URL } from "@/lib/constants";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showStickyCta, setShowStickyCta] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+      // Only reveal the sticky CTA once the hero (and its own CTA) has scrolled away
+      setShowStickyCta(window.scrollY > window.innerHeight * 0.9);
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
@@ -119,21 +125,26 @@ export default function Header() {
           </a>
         </div>
       )}
-
-      {/* Sticky bottom Book a Demo CTA — mobile only */}
-      <div
-        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-[#E2E8F0] px-4 pt-3"
-        style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}
-      >
-        <a
-          href={CALENDLY_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block text-center bg-[#2563EB] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#1D4ED8] transition-colors shadow-lg shadow-[#2563EB]/20"
-        >
-          Book a Demo
-        </a>
-      </div>
     </header>
+
+    {/* Sticky bottom Book a Demo CTA — mobile only, appears after scrolling past the hero.
+        Kept OUTSIDE <header> so its fixed positioning is relative to the viewport, not the
+        header's backdrop-filter containing block. */}
+    <div
+      className={`md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-[#E2E8F0] px-4 pt-3 transition-transform duration-300 ${
+        showStickyCta ? "translate-y-0" : "translate-y-full"
+      }`}
+      style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}
+    >
+      <a
+        href={CALENDLY_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block text-center bg-[#2563EB] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#1D4ED8] transition-colors shadow-lg shadow-[#2563EB]/20"
+      >
+        Book a Demo
+      </a>
+    </div>
+    </>
   );
 }
