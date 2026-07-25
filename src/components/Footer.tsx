@@ -2,7 +2,7 @@ import { CALENDLY_URL } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#1E293B] pt-16 pb-8 bg-[#0F172A]">
+    <footer className="border-t border-[#1E293B] pt-16 pb-28 md:pb-8 bg-[#0F172A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#1E293B]">
           {/* Brand */}

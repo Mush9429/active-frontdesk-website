@@ -119,6 +119,21 @@ export default function Header() {
           </a>
         </div>
       )}
+
+      {/* Sticky bottom Book a Demo CTA — mobile only */}
+      <div
+        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-[#E2E8F0] px-4 pt-3"
+        style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}
+      >
+        <a
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block text-center bg-[#2563EB] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#1D4ED8] transition-colors shadow-lg shadow-[#2563EB]/20"
+        >
+          Book a Demo
+        </a>
+      </div>
     </header>
   );
 }
