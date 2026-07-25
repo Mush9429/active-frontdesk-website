@@ -42,10 +42,10 @@ export default function HowItWorks() {
   const ref = useScrollAnimation();
 
   return (
-    <section id="how-it-works" ref={ref} className="fade-in-section py-24 md:py-32 bg-[#F8FAFC]">
+    <section id="how-it-works" ref={ref} className="fade-in-section pt-12 md:pt-20 pb-24 md:pb-32 bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-[#3B82F6] font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#2563EB] font-semibold text-sm uppercase tracking-widest mb-3">
             How It Works
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] mb-4">
@@ -60,17 +60,17 @@ export default function HowItWorks() {
           {steps.map((step) => (
             <div
               key={step.number}
-              className="relative bg-white rounded-2xl p-8 border border-[#E2E8F0] hover:border-[#3B82F6]/40 transition-all group shadow-sm"
+              className="relative bg-white rounded-2xl p-8 border border-[#E2E8F0] hover:border-[#2563EB]/40 transition-all group shadow-sm"
             >
               {/* Step number */}
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-xs font-bold text-[#3B82F6] bg-[#EFF6FF] px-3 py-1 rounded-full">
+                <span className="text-xs font-bold text-[#2563EB] bg-[#EFF6FF] px-3 py-1 rounded-full">
                   Step {step.number}
                 </span>
               </div>
 
               {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-[#3B82F6] flex items-center justify-center mb-5 group-hover:bg-[#3B82F6] group-hover:text-white group-hover:border-[#3B82F6] transition-all">
+              <div className="w-12 h-12 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-[#2563EB] flex items-center justify-center mb-5 group-hover:bg-[#2563EB] group-hover:text-white group-hover:border-[#2563EB] transition-all">
                 {step.icon}
               </div>
 

@@ -105,14 +105,14 @@ function renderMarkdown(content: string) {
       }
       const content = trimmed.slice(2).replace(/\*\*(.+?)\*\*/g, '<strong class="text-[#0F172A]">$1</strong>');
       html.push(
-        `<li class="text-[#475569] leading-relaxed flex gap-2"><span class="text-[#3B82F6] mt-1">&#8226;</span><span>${content}</span></li>`
+        `<li class="text-[#475569] leading-relaxed flex gap-2"><span class="text-[#2563EB] mt-1">&#8226;</span><span>${content}</span></li>`
       );
     }
     // Italics paragraph
     else if (trimmed.startsWith("*") && trimmed.endsWith("*")) {
       const inner = trimmed.slice(1, -1).replace(
         /\[(.+?)\]\((.+?)\)/g,
-        '<a href="$2" class="text-[#3B82F6] hover:underline">$1</a>'
+        '<a href="$2" class="text-[#2563EB] hover:underline">$1</a>'
       );
       html.push(
         `<p class="text-[#94A3B8] italic my-4 leading-relaxed">${inner}</p>`
@@ -127,7 +127,7 @@ function renderMarkdown(content: string) {
       );
       text = text.replace(
         /\[(.+?)\]\((.+?)\)/g,
-        '<a href="$2" class="text-[#3B82F6] hover:underline">$1</a>'
+        '<a href="$2" class="text-[#2563EB] hover:underline">$1</a>'
       );
       html.push(`<p class="text-[#475569] leading-relaxed my-4">${text}</p>`);
     }
@@ -157,12 +157,12 @@ export default async function BlogPost({
           <div className="mb-10">
             <a
               href="/blog"
-              className="text-sm text-[#94A3B8] hover:text-[#3B82F6] transition-colors mb-6 inline-block"
+              className="text-sm text-[#94A3B8] hover:text-[#2563EB] transition-colors mb-6 inline-block"
             >
               &larr; Back to blog
             </a>
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs font-medium text-[#3B82F6] bg-[#EFF6FF] px-3 py-1 rounded-full">
+              <span className="text-xs font-medium text-[#2563EB] bg-[#EFF6FF] px-3 py-1 rounded-full">
                 {post.category}
               </span>
               <span className="text-xs text-[#94A3B8]">{post.readTime}</span>
@@ -200,7 +200,7 @@ export default async function BlogPost({
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#3B82F6] hover:bg-[#2563EB] text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+              className="inline-block bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold px-8 py-3 rounded-lg transition-colors"
             >
               Book a Demo
             </a>

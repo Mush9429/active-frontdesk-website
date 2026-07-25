@@ -14,14 +14,14 @@ export default function Hero() {
       <div ref={ref} className="fade-in-section max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-[#F8FAFC] text-[#475569] text-xs font-medium px-4 py-2 rounded-full mb-8 border border-[#E2E8F0]">
-          <span className="w-1.5 h-1.5 bg-[#3B82F6] rounded-full animate-pulse"></span>
+          <span className="w-1.5 h-1.5 bg-[#2563EB] rounded-full animate-pulse"></span>
           Now serving tradies and hospitality across Australia
         </div>
 
         {/* Headline */}
         <h1 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-[#0F172A] leading-[1.05] tracking-tight mb-6">
           Never miss a<br />
-          <span className="text-[#3B82F6]">job again.</span>
+          <span className="text-[#2563EB]">job again.</span>
         </h1>
 
         {/* Subheading */}
@@ -36,13 +36,13 @@ export default function Hero() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-[#3B82F6] text-white font-semibold px-8 py-4 rounded-xl hover:bg-[#2563EB] transition-all text-base shadow-lg shadow-blue-500/20"
+            className="inline-flex items-center justify-center bg-[#2563EB] text-white font-semibold px-8 py-4 rounded-xl hover:bg-[#1D4ED8] transition-all text-base shadow-lg shadow-[#2563EB]/20 cursor-pointer"
           >
             Book a Demo
           </a>
           <a
             href="#listen"
-            className="inline-flex items-center justify-center gap-2 border border-[#E2E8F0] text-[#475569] font-semibold px-8 py-4 rounded-xl hover:border-[#3B82F6] hover:text-[#3B82F6] transition-all text-base"
+            className="inline-flex items-center justify-center gap-2 border border-[#E2E8F0] text-[#475569] font-semibold px-8 py-4 rounded-xl hover:border-[#2563EB] hover:text-[#2563EB] transition-all text-base"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
@@ -60,7 +60,7 @@ export default function Hero() {
                 className="flex items-center gap-2 text-sm text-[#94A3B8]"
               >
                 <svg
-                  className="w-4 h-4 text-[#3B82F6]"
+                  className="w-4 h-4 text-[#2563EB]"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

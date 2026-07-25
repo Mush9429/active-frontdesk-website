@@ -66,7 +66,7 @@ export default function Features() {
     <section id="features" ref={ref} className="fade-in-section py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-[#3B82F6] font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#2563EB] font-semibold text-sm uppercase tracking-widest mb-3">
             Features
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] mb-4">
@@ -81,9 +81,9 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 border border-[#E2E8F0] hover:border-[#3B82F6]/30 hover:shadow-md transition-all group"
+              className="bg-white rounded-2xl p-6 border border-[#E2E8F0] hover:border-[#2563EB]/30 hover:shadow-md transition-all group"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#EFF6FF] border border-[#DBEAFE] text-[#3B82F6] flex items-center justify-center mb-5 group-hover:bg-[#3B82F6] group-hover:text-white group-hover:border-[#3B82F6] transition-all">
+              <div className="w-10 h-10 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] text-[#2563EB] flex items-center justify-center mb-5 group-hover:bg-[#2563EB] group-hover:text-white group-hover:border-[#2563EB] transition-all">
                 {feature.icon}
               </div>
               <h3 className="font-bold text-[#0F172A] text-base mb-2">

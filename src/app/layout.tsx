@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   display: "swap",
 });
@@ -21,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.className} scroll-smooth`}>
-      <body className="min-h-screen antialiased bg-[#0A0A0B] text-[#F8FAFC]">
+    <html lang="en" className={`${dmSans.className} scroll-smooth`}>
+      <body className="min-h-screen antialiased bg-white text-[#0F172A]">
         {children}
       </body>
     </html>

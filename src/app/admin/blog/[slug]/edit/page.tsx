@@ -45,7 +45,7 @@ export default function EditBlogPost({
     return (
       <div className="flex items-center justify-center py-24">
         <div className="text-center">
-          <div className="w-8 h-8 border-2 border-[#3B82F6] border-t-transparent rounded-full animate-spin mx-auto" />
+          <div className="w-8 h-8 border-2 border-[#2563EB] border-t-transparent rounded-full animate-spin mx-auto" />
           <p className="text-[#64748B] text-sm mt-3">Loading post...</p>
         </div>
       </div>
@@ -57,7 +57,7 @@ export default function EditBlogPost({
       <div className="flex items-center justify-center py-24">
         <div className="text-center">
           <p className="text-white text-lg font-medium">Post not found</p>
-          <a href="/admin/blog" className="text-[#3B82F6] text-sm mt-2 inline-block">
+          <a href="/admin/blog" className="text-[#2563EB] text-sm mt-2 inline-block">
             Back to blog list
           </a>
         </div>

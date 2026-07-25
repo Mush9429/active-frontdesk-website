@@ -1,15 +1,16 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import StatsBand from "@/components/StatsBand";
 import LogoMarquee from "@/components/LogoMarquee";
 import ProblemStatement from "@/components/ProblemStatement";
 import BeforeAfter from "@/components/BeforeAfter";
 import HowItWorks from "@/components/HowItWorks";
+import FeatureShowcase from "@/components/FeatureShowcase";
 import Features from "@/components/Features";
 import WhyWeBuiltThis from "@/components/WhyWeBuiltThis";
 import IdealFor from "@/components/IdealFor";
 import AudioExplainer from "@/components/AudioExplainer";
 import Pricing from "@/components/Pricing";
-import ROICalculator from "@/components/ROICalculator";
 import FAQ from "@/components/FAQ";
 import BlogPreview from "@/components/BlogPreview";
 import FinalCTA from "@/components/FinalCTA";
@@ -25,15 +26,16 @@ export default function Home() {
       <main>
         <Hero />
         <AudioExplainer />
+        <StatsBand />
         <LogoMarquee />
         <ProblemStatement />
         <BeforeAfter />
         <HowItWorks />
+        <FeatureShowcase />
         <Features />
         <WhyWeBuiltThis />
         <IdealFor />
         <Pricing />
-        <ROICalculator />
         <FAQ />
         <BlogPreview posts={posts} />
         <FinalCTA />

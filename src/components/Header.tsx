@@ -25,7 +25,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-[#3B82F6] flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-[#2563EB] flex items-center justify-center">
               <svg
                 className="w-4 h-4 text-white"
                 fill="currentColor"
@@ -64,7 +64,7 @@ export default function Header() {
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#3B82F6] text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#2563EB] transition-colors"
+              className="inline-flex items-center gap-2 bg-[#2563EB] text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#1D4ED8] transition-colors"
             >
               Book a Demo
             </a>
@@ -72,7 +72,7 @@ export default function Header() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 rounded-md text-[#475569] hover:text-[#0F172A] transition-colors"
+            className="md:hidden p-2 rounded-md text-[#475569] hover:text-[#0F172A] transition-colors cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -113,7 +113,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
-            className="block text-center bg-[#3B82F6] text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#2563EB] transition-colors mt-3"
+            className="block text-center bg-[#2563EB] text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#1D4ED8] transition-colors mt-3"
           >
             Book a Demo
           </a>

@@ -45,7 +45,7 @@ function LoginForm() {
           value={pin}
           onChange={(e) => setPin(e.target.value)}
           placeholder="Enter PIN"
-          className="w-full bg-[#111113] border border-[#1E293B] rounded-lg px-4 py-3 text-white text-center text-lg tracking-[0.5em] placeholder:tracking-normal placeholder:text-[#64748B] focus:outline-none focus:border-[#3B82F6] transition-colors"
+          className="w-full bg-[#111113] border border-[#1E293B] rounded-lg px-4 py-3 text-white text-center text-lg tracking-[0.5em] placeholder:tracking-normal placeholder:text-[#64748B] focus:outline-none focus:border-[#2563EB] transition-colors"
           autoFocus
           maxLength={10}
         />
@@ -58,7 +58,7 @@ function LoginForm() {
       <button
         type="submit"
         disabled={loading || !pin}
-        className="w-full bg-[#3B82F6] hover:bg-[#2563EB] disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg transition-colors"
+        className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-lg transition-colors"
       >
         {loading ? "Checking..." : "Unlock"}
       </button>
@@ -71,7 +71,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-[#0A0A0B] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <div className="w-12 h-12 rounded-xl bg-[#3B82F6] flex items-center justify-center mx-auto mb-4">
+          <div className="w-12 h-12 rounded-xl bg-[#2563EB] flex items-center justify-center mx-auto mb-4">
             <svg
               className="w-6 h-6 text-white"
               fill="none"
@@ -94,7 +94,7 @@ export default function LoginPage() {
 
         <Suspense fallback={
           <div className="text-center py-4">
-            <div className="w-6 h-6 border-2 border-[#3B82F6] border-t-transparent rounded-full animate-spin mx-auto" />
+            <div className="w-6 h-6 border-2 border-[#2563EB] border-t-transparent rounded-full animate-spin mx-auto" />
           </div>
         }>
           <LoginForm />

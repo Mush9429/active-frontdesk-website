@@ -20,7 +20,7 @@ export default function Pricing() {
     <section id="pricing" ref={ref} className="fade-in-section py-24 md:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-[#3B82F6] font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#2563EB] font-semibold text-sm uppercase tracking-widest mb-3">
             Pricing
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] mb-4">
@@ -32,15 +32,15 @@ export default function Pricing() {
         </div>
 
         {/* Main pricing card */}
-        <div className="relative bg-white rounded-3xl border border-[#3B82F6]/30 overflow-hidden shadow-lg">
+        <div className="relative bg-white rounded-3xl border border-[#2563EB]/30 overflow-hidden shadow-lg">
           {/* Top accent */}
-          <div className="h-1 bg-gradient-to-r from-[#3B82F6] to-[#2563EB]"></div>
+          <div className="h-1 bg-gradient-to-r from-[#2563EB] to-[#1D4ED8]"></div>
 
           <div className="p-8 md:p-10">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
               {/* Left: price + features */}
               <div className="flex-1">
-                <div className="inline-flex items-center gap-2 bg-[#EFF6FF] text-[#3B82F6] text-xs font-bold px-3 py-1.5 rounded-full mb-6 border border-[#DBEAFE]">
+                <div className="inline-flex items-center gap-2 bg-[#EFF6FF] text-[#2563EB] text-xs font-bold px-3 py-1.5 rounded-full mb-6 border border-[#BFDBFE]">
                   Full Service Setup
                 </div>
 
@@ -63,7 +63,7 @@ export default function Pricing() {
                 <ul className="space-y-3">
                   {includes.map((item) => (
                     <li key={item} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#EFF6FF] text-[#3B82F6] flex items-center justify-center flex-shrink-0">
+                      <div className="w-5 h-5 rounded-full bg-[#EFF6FF] text-[#2563EB] flex items-center justify-center flex-shrink-0">
                         <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
@@ -95,7 +95,7 @@ export default function Pricing() {
                   href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center bg-[#3B82F6] text-white font-bold px-6 py-4 rounded-xl hover:bg-[#2563EB] transition-colors text-base shadow-lg shadow-blue-500/20"
+                  className="block text-center bg-[#2563EB] text-white font-bold px-6 py-4 rounded-xl hover:bg-[#1D4ED8] transition-colors text-base shadow-lg shadow-[#2563EB]/20 cursor-pointer"
                 >
                   Book a Demo
                 </a>

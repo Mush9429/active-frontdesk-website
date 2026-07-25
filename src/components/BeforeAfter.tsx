@@ -9,7 +9,7 @@ export default function BeforeAfter() {
     <section ref={ref} className="fade-in-section py-24 md:py-32 bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-[#3B82F6] font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#2563EB] font-semibold text-sm uppercase tracking-widest mb-3">
             The Difference
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] mb-4">
@@ -97,7 +97,7 @@ export default function BeforeAfter() {
                   </div>
                   <div className="flex-1 flex items-start gap-2">
                     <div className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${
-                      item.status === "booked" ? "bg-green-500" : "bg-[#3B82F6]"
+                      item.status === "booked" ? "bg-green-500" : "bg-[#2563EB]"
                     }`} />
                     <p className="text-sm text-[#475569]">{item.event}</p>
                   </div>

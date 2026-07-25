@@ -9,7 +9,7 @@ export default function FinalCTA() {
   return (
     <section ref={ref} className="fade-in-section py-24 md:py-32">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl px-8 py-16 md:px-16 md:py-20 text-center">
+        <div className="bg-gradient-to-r from-[#2563EB] to-[#1D4ED8] rounded-3xl px-8 py-16 md:px-16 md:py-20 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 text-white/90 text-xs font-medium px-4 py-2 rounded-full mb-8 border border-white/20">
             <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
             Taking new clients now
@@ -19,7 +19,7 @@ export default function FinalCTA() {
             Ready to stop<br className="hidden sm:block" /> missing jobs?
           </h2>
 
-          <p className="text-blue-100 text-lg mb-10 max-w-xl mx-auto">
+          <p className="text-[#BFDBFE] text-lg mb-10 max-w-xl mx-auto">
             We handle the calls. You stay on the tools. More jobs. Less chasing. Your front desk, sorted.
           </p>
 
@@ -28,7 +28,7 @@ export default function FinalCTA() {
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-white text-blue-600 font-bold px-8 py-4 rounded-xl hover:bg-blue-50 transition-all text-base shadow-lg"
+              className="inline-flex items-center justify-center bg-white text-[#2563EB] font-bold px-8 py-4 rounded-xl hover:bg-[#EFF6FF] transition-all text-base shadow-lg cursor-pointer"
             >
               Book a Demo
             </a>
@@ -43,7 +43,7 @@ export default function FinalCTA() {
             </a>
           </div>
 
-          <p className="text-blue-200 text-sm mt-8">
+          <p className="text-[#BFDBFE] text-sm mt-8">
             No lock-in contracts. Setup in 48 hours.
           </p>
         </div>

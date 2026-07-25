@@ -61,10 +61,10 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" ref={ref} className="fade-in-section py-24 md:py-32">
+    <section id="faq" ref={ref} className="fade-in-section pt-16 md:pt-24 pb-24 md:pb-32">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-[#3B82F6] font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#2563EB] font-semibold text-sm uppercase tracking-widest mb-3">
             FAQ
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] mb-4">
@@ -81,13 +81,13 @@ export default function FAQ() {
               key={index}
               className={`rounded-xl overflow-hidden border transition-colors ${
                 openIndex === index
-                  ? "border-[#3B82F6]/40 bg-white shadow-sm"
+                  ? "border-[#2563EB]/40 bg-white shadow-sm"
                   : "border-[#E2E8F0] bg-white"
               }`}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-[#F8FAFC] transition-colors"
+                className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-[#F8FAFC] transition-colors cursor-pointer"
               >
                 <span className="font-semibold text-[#0F172A] text-sm sm:text-base">
                   {faq.question}
@@ -95,7 +95,7 @@ export default function FAQ() {
                 <div
                   className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 transition-all ${
                     openIndex === index
-                      ? "bg-[#3B82F6] text-white rotate-180"
+                      ? "bg-[#2563EB] text-white rotate-180"
                       : "bg-[#F1F5F9] text-[#94A3B8]"
                   }`}
                 >

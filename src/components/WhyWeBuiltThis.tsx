@@ -6,7 +6,7 @@ export default function WhyWeBuiltThis() {
   const ref = useScrollAnimation();
 
   return (
-    <section ref={ref} className="fade-in-section py-24 md:py-32">
+    <section ref={ref} className="fade-in-section pt-16 md:pt-24 pb-24 md:pb-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Visual — phone screen mockup */}
@@ -28,8 +28,8 @@ export default function WhyWeBuiltThis() {
 
                     {/* Incoming call screen */}
                     <div className="px-5 pt-6 pb-8 text-center">
-                      <div className="w-16 h-16 rounded-full bg-[#3B82F6]/20 flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-[#3B82F6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <div className="w-16 h-16 rounded-full bg-[#2563EB]/20 flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                         </svg>
                       </div>
@@ -38,7 +38,7 @@ export default function WhyWeBuiltThis() {
                       <p className="text-white/50 text-xs mb-6">Melbourne, VIC</p>
 
                       {/* AI answering indicator */}
-                      <div className="bg-[#3B82F6]/20 border border-[#3B82F6]/30 rounded-xl px-4 py-3 mb-4">
+                      <div className="bg-[#2563EB]/20 border border-[#2563EB]/30 rounded-xl px-4 py-3 mb-4">
                         <div className="flex items-center justify-center gap-2 mb-2">
                           <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
                           <span className="text-green-400 text-xs font-semibold">AI Receptionist Active</span>
@@ -91,7 +91,7 @@ export default function WhyWeBuiltThis() {
 
               <div className="absolute -left-2 bottom-20 bg-white rounded-xl border border-[#E2E8F0] shadow-lg px-4 py-3 max-w-[200px] hidden md:block">
                 <div className="flex items-center gap-2 mb-1">
-                  <div className="w-2 h-2 bg-[#3B82F6] rounded-full" />
+                  <div className="w-2 h-2 bg-[#2563EB] rounded-full" />
                   <span className="text-xs font-semibold text-[#0F172A]">Customer Added</span>
                 </div>
                 <p className="text-[10px] text-[#475569]">John Smith - 0412 345 678 saved to CRM</p>
@@ -101,7 +101,7 @@ export default function WhyWeBuiltThis() {
 
           {/* Story content */}
           <div>
-            <p className="text-[#3B82F6] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#2563EB] font-semibold text-sm uppercase tracking-widest mb-3">
               Why We Built This
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] mb-6 leading-tight">
@@ -125,15 +125,15 @@ export default function WhyWeBuiltThis() {
 
             <div className="mt-8 grid grid-cols-3 gap-4">
               <div className="text-center p-4 bg-[#F8FAFC] rounded-xl border border-[#E2E8F0]">
-                <p className="text-2xl font-extrabold text-[#3B82F6]">2s</p>
+                <p className="text-2xl font-extrabold text-[#2563EB]">2s</p>
                 <p className="text-xs text-[#475569] mt-1">Answer time</p>
               </div>
               <div className="text-center p-4 bg-[#F8FAFC] rounded-xl border border-[#E2E8F0]">
-                <p className="text-2xl font-extrabold text-[#3B82F6]">24/7</p>
+                <p className="text-2xl font-extrabold text-[#2563EB]">24/7</p>
                 <p className="text-xs text-[#475569] mt-1">Availability</p>
               </div>
               <div className="text-center p-4 bg-[#F8FAFC] rounded-xl border border-[#E2E8F0]">
-                <p className="text-2xl font-extrabold text-[#3B82F6]">48h</p>
+                <p className="text-2xl font-extrabold text-[#2563EB]">48h</p>
                 <p className="text-xs text-[#475569] mt-1">Setup time</p>
               </div>
             </div>

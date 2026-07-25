@@ -83,9 +83,9 @@ function StepIndicator({ current, total }: { current: number; total: number }) {
           <div
             className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
               i < current
-                ? "bg-[#3B82F6] text-white"
+                ? "bg-[#2563EB] text-white"
                 : i === current
-                ? "bg-[#3B82F6] text-white ring-4 ring-[#3B82F6]/20"
+                ? "bg-[#2563EB] text-white ring-4 ring-[#2563EB]/20"
                 : "bg-[#F1F5F9] text-[#94A3B8]"
             }`}
           >
@@ -98,7 +98,7 @@ function StepIndicator({ current, total }: { current: number; total: number }) {
             )}
           </div>
           {i < total - 1 && (
-            <div className={`w-8 h-0.5 ${i < current ? "bg-[#3B82F6]" : "bg-[#E2E8F0]"}`} />
+            <div className={`w-8 h-0.5 ${i < current ? "bg-[#2563EB]" : "bg-[#E2E8F0]"}`} />
           )}
         </div>
       ))}
@@ -138,7 +138,7 @@ function Input({
         onChange={onChange}
         placeholder={placeholder}
         required={required}
-        className="w-full bg-white border border-[#E2E8F0] rounded-lg px-4 py-3 text-[#0F172A] text-sm placeholder:text-[#94A3B8] focus:outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/10 transition-all"
+        className="w-full bg-white border border-[#E2E8F0] rounded-lg px-4 py-3 text-[#0F172A] text-sm placeholder:text-[#94A3B8] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/10 transition-all"
       />
     </div>
   );
@@ -176,7 +176,7 @@ function TextArea({
         placeholder={placeholder}
         required={required}
         rows={rows}
-        className="w-full bg-white border border-[#E2E8F0] rounded-lg px-4 py-3 text-[#0F172A] text-sm placeholder:text-[#94A3B8] focus:outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/10 transition-all resize-none"
+        className="w-full bg-white border border-[#E2E8F0] rounded-lg px-4 py-3 text-[#0F172A] text-sm placeholder:text-[#94A3B8] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/10 transition-all resize-none"
       />
     </div>
   );
@@ -210,7 +210,7 @@ function Select({
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full bg-white border border-[#E2E8F0] rounded-lg px-4 py-3 text-[#0F172A] text-sm focus:outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/10 transition-all"
+        className="w-full bg-white border border-[#E2E8F0] rounded-lg px-4 py-3 text-[#0F172A] text-sm focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/10 transition-all"
       >
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
@@ -275,7 +275,7 @@ export default function OnboardPage() {
           </p>
           <a
             href="/"
-            className="inline-flex items-center gap-2 bg-[#3B82F6] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#2563EB] transition-colors"
+            className="inline-flex items-center gap-2 bg-[#2563EB] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#1D4ED8] transition-colors"
           >
             Back to Home
           </a>
@@ -291,7 +291,7 @@ export default function OnboardPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6">
           <div className="flex items-center gap-3 mb-1">
             <a href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-[#3B82F6] flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-[#2563EB] flex items-center justify-center">
                 <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                 </svg>
@@ -609,7 +609,7 @@ export default function OnboardPage() {
               ]}
             />
 
-            <div className="mt-6 p-4 bg-[#EFF6FF] border border-[#DBEAFE] rounded-xl">
+            <div className="mt-6 p-4 bg-[#EFF6FF] border border-[#BFDBFE] rounded-xl">
               <p className="text-sm text-[#1E40AF]">
                 <strong>What happens next:</strong> After you submit, we&apos;ll set up your AI receptionist
                 within 48 hours. You&apos;ll receive a test call link to try it out before we go live.
@@ -634,14 +634,14 @@ export default function OnboardPage() {
           {step < totalSteps - 1 ? (
             <button
               onClick={() => setStep(step + 1)}
-              className="bg-[#3B82F6] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#2563EB] transition-colors text-sm"
+              className="bg-[#2563EB] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#1D4ED8] transition-colors text-sm"
             >
               Continue
             </button>
           ) : (
             <button
               onClick={handleSubmit}
-              className="bg-[#3B82F6] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#2563EB] transition-colors text-sm"
+              className="bg-[#2563EB] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#1D4ED8] transition-colors text-sm"
             >
               Submit & Start Setup
             </button>

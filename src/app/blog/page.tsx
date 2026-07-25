@@ -31,10 +31,10 @@ export default function BlogIndex() {
               <a
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block bg-white border border-[#E2E8F0] rounded-xl p-8 hover:border-[#3B82F6]/50 hover:shadow-md transition-all duration-300"
+                className="group block bg-white border border-[#E2E8F0] rounded-xl p-8 hover:border-[#2563EB]/50 hover:shadow-md transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-xs font-medium text-[#3B82F6] bg-[#EFF6FF] px-3 py-1 rounded-full">
+                  <span className="text-xs font-medium text-[#2563EB] bg-[#EFF6FF] px-3 py-1 rounded-full">
                     {post.category}
                   </span>
                   <span className="text-xs text-[#94A3B8]">
@@ -48,13 +48,13 @@ export default function BlogIndex() {
                     })}
                   </span>
                 </div>
-                <h2 className="text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#3B82F6] transition-colors">
+                <h2 className="text-2xl font-bold text-[#0F172A] mb-3 group-hover:text-[#2563EB] transition-colors">
                   {post.title}
                 </h2>
                 <p className="text-[#475569] leading-relaxed mb-4">
                   {post.excerpt}
                 </p>
-                <span className="text-sm text-[#3B82F6] group-hover:translate-x-1 inline-block transition-transform">
+                <span className="text-sm text-[#2563EB] group-hover:translate-x-1 inline-block transition-transform">
                   Read more &rarr;
                 </span>
               </a>

@@ -1,5 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# claude code local tooling (design skill data — not part of the app)
+/.claude/skills
+
+# local onboarding submissions (written at runtime in dev)
+/content/onboarding
+
 # dependencies
 /node_modules
 /.pnp

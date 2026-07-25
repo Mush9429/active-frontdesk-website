@@ -48,7 +48,7 @@ export default function AdminBlogList() {
         </div>
         <a
           href="/admin/blog/new"
-          className="inline-flex items-center gap-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors"
+          className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -59,7 +59,7 @@ export default function AdminBlogList() {
 
       {loading ? (
         <div className="bg-[#111113] border border-[#1E293B] rounded-xl p-12 text-center">
-          <div className="w-8 h-8 border-2 border-[#3B82F6] border-t-transparent rounded-full animate-spin mx-auto" />
+          <div className="w-8 h-8 border-2 border-[#2563EB] border-t-transparent rounded-full animate-spin mx-auto" />
           <p className="text-[#64748B] text-sm mt-3">Loading posts...</p>
         </div>
       ) : posts.length === 0 ? (
@@ -73,7 +73,7 @@ export default function AdminBlogList() {
           <p className="text-[#64748B] text-sm mt-1">Create your first post to start driving SEO traffic.</p>
           <a
             href="/admin/blog/new"
-            className="inline-flex items-center gap-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors mt-4"
+            className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors mt-4"
           >
             Create First Post
           </a>
@@ -113,7 +113,7 @@ export default function AdminBlogList() {
                     </p>
                   </td>
                   <td className="px-5 py-4 hidden sm:table-cell">
-                    <span className="text-xs font-medium text-[#3B82F6] bg-[#3B82F6]/10 px-2.5 py-1 rounded-full">
+                    <span className="text-xs font-medium text-[#2563EB] bg-[#2563EB]/10 px-2.5 py-1 rounded-full">
                       {post.category}
                     </span>
                   </td>
@@ -143,7 +143,7 @@ export default function AdminBlogList() {
                       </a>
                       <a
                         href={`/admin/blog/${post.slug}/edit`}
-                        className="p-2 rounded-lg text-[#64748B] hover:text-[#3B82F6] hover:bg-[#3B82F6]/10 transition-colors"
+                        className="p-2 rounded-lg text-[#64748B] hover:text-[#2563EB] hover:bg-[#2563EB]/10 transition-colors"
                         title="Edit"
                       >
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

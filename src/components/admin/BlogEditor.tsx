@@ -83,7 +83,7 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
     html = html.replace(/^### (.+)$/gm, '<h3 class="text-lg font-bold text-white mt-6 mb-2">$1</h3>');
     html = html.replace(/^## (.+)$/gm, '<h2 class="text-xl font-bold text-white mt-8 mb-3">$1</h2>');
     html = html.replace(/\*\*(.+?)\*\*/g, '<strong class="text-white">$1</strong>');
-    html = html.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-[#3B82F6] underline">$1</a>');
+    html = html.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-[#2563EB] underline">$1</a>');
     html = html.replace(/^- (.+)$/gm, '<li class="text-[#94A3B8] ml-4">$1</li>');
     html = html.replace(/^(?!<[hl]|<li)(.+)$/gm, '<p class="text-[#94A3B8] my-2">$1</p>');
     html = html.replace(/^---$/gm, '<hr class="border-[#1E293B] my-6" />');
@@ -115,7 +115,7 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
             onClick={() => setShowPreview(!showPreview)}
             className={`text-sm font-medium px-4 py-2 rounded-lg transition-colors ${
               showPreview
-                ? "bg-[#3B82F6]/10 text-[#3B82F6]"
+                ? "bg-[#2563EB]/10 text-[#2563EB]"
                 : "text-[#64748B] hover:text-white hover:bg-[#1E293B]"
             }`}
           >
@@ -124,7 +124,7 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
           <button
             onClick={handleSave}
             disabled={saving}
-            className="inline-flex items-center gap-2 bg-[#3B82F6] hover:bg-[#2563EB] disabled:opacity-50 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
+            className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#1D4ED8] disabled:opacity-50 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
           >
             {saving ? (
               <>
@@ -153,7 +153,7 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
         /* Preview */
         <div className="bg-[#111113] border border-[#1E293B] rounded-xl p-8">
           <div className="max-w-3xl mx-auto">
-            <span className="text-xs font-medium text-[#3B82F6] bg-[#3B82F6]/10 px-3 py-1 rounded-full">
+            <span className="text-xs font-medium text-[#2563EB] bg-[#2563EB]/10 px-3 py-1 rounded-full">
               {category}
             </span>
             <h1 className="text-3xl font-bold text-white mt-4 mb-2">{title || "Untitled"}</h1>
@@ -161,7 +161,7 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
               {author} &bull; {readTime} min read
             </p>
             {excerpt && (
-              <p className="text-[#94A3B8] italic border-l-2 border-[#3B82F6] pl-4 mb-6">
+              <p className="text-[#94A3B8] italic border-l-2 border-[#2563EB] pl-4 mb-6">
                 {excerpt}
               </p>
             )}
@@ -185,7 +185,7 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="e.g. Why Tradies Miss Calls (And How Much It Costs Them)"
-                className="w-full bg-[#111113] border border-[#1E293B] rounded-lg px-4 py-3 text-white placeholder:text-[#64748B] focus:outline-none focus:border-[#3B82F6] transition-colors"
+                className="w-full bg-[#111113] border border-[#1E293B] rounded-lg px-4 py-3 text-white placeholder:text-[#64748B] focus:outline-none focus:border-[#2563EB] transition-colors"
               />
             </div>
 
@@ -198,7 +198,7 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
                 onChange={(e) => setExcerpt(e.target.value)}
                 placeholder="A short summary for the blog listing and SEO meta description..."
                 rows={2}
-                className="w-full bg-[#111113] border border-[#1E293B] rounded-lg px-4 py-3 text-white placeholder:text-[#64748B] focus:outline-none focus:border-[#3B82F6] transition-colors resize-none"
+                className="w-full bg-[#111113] border border-[#1E293B] rounded-lg px-4 py-3 text-white placeholder:text-[#64748B] focus:outline-none focus:border-[#2563EB] transition-colors resize-none"
               />
             </div>
 
@@ -217,7 +217,7 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
                 onChange={(e) => setContent(e.target.value)}
                 placeholder={`## Your Heading\n\nStart writing your blog post here. You can use:\n\n- **Bold text** with double asterisks\n- [Links](https://example.com)\n- ## Headings with hash marks\n- ### Subheadings\n- Bullet lists with dashes\n- --- for horizontal rules`}
                 rows={24}
-                className="w-full bg-[#111113] border border-[#1E293B] rounded-lg px-4 py-3 text-white placeholder:text-[#64748B] focus:outline-none focus:border-[#3B82F6] transition-colors resize-y font-mono text-sm leading-relaxed"
+                className="w-full bg-[#111113] border border-[#1E293B] rounded-lg px-4 py-3 text-white placeholder:text-[#64748B] focus:outline-none focus:border-[#2563EB] transition-colors resize-y font-mono text-sm leading-relaxed"
               />
             </div>
           </div>
@@ -234,7 +234,7 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
                 <select
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
-                  className="w-full bg-[#0A0A0B] border border-[#1E293B] rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#3B82F6] transition-colors"
+                  className="w-full bg-[#0A0A0B] border border-[#1E293B] rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#2563EB] transition-colors"
                 >
                   {categories.map((cat) => (
                     <option key={cat} value={cat}>
@@ -252,7 +252,7 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
                   type="text"
                   value={author}
                   onChange={(e) => setAuthor(e.target.value)}
-                  className="w-full bg-[#0A0A0B] border border-[#1E293B] rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#3B82F6] transition-colors"
+                  className="w-full bg-[#0A0A0B] border border-[#1E293B] rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#2563EB] transition-colors"
                 />
               </div>
 
@@ -283,7 +283,7 @@ export default function BlogEditor({ initialData, mode }: BlogEditorProps) {
                   { syntax: "| A | B |", result: "Table row" },
                 ].map((item) => (
                   <div key={item.syntax} className="flex justify-between gap-2">
-                    <code className="text-[#3B82F6] bg-[#3B82F6]/10 px-1.5 py-0.5 rounded font-mono">
+                    <code className="text-[#2563EB] bg-[#2563EB]/10 px-1.5 py-0.5 rounded font-mono">
                       {item.syntax}
                     </code>
                     <span className="text-[#64748B]">{item.result}</span>

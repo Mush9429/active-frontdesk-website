@@ -51,7 +51,7 @@ export default function AdminDashboard() {
   ];
 
   const colorMap: Record<string, { bg: string; text: string; iconBg: string }> = {
-    blue: { bg: "bg-[#3B82F6]/10", text: "text-[#3B82F6]", iconBg: "bg-[#3B82F6]/20" },
+    blue: { bg: "bg-[#2563EB]/10", text: "text-[#2563EB]", iconBg: "bg-[#2563EB]/20" },
     emerald: { bg: "bg-emerald-500/10", text: "text-emerald-400", iconBg: "bg-emerald-500/20" },
     violet: { bg: "bg-violet-500/10", text: "text-violet-400", iconBg: "bg-violet-500/20" },
     amber: { bg: "bg-amber-500/10", text: "text-amber-400", iconBg: "bg-amber-500/20" },
@@ -94,14 +94,14 @@ export default function AdminDashboard() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <a
             href="/admin/blog/new"
-            className="group bg-[#111113] border border-[#1E293B] rounded-xl p-5 hover:border-[#3B82F6]/50 transition-all"
+            className="group bg-[#111113] border border-[#1E293B] rounded-xl p-5 hover:border-[#2563EB]/50 transition-all"
           >
-            <div className="w-10 h-10 rounded-lg bg-[#3B82F6]/20 flex items-center justify-center text-[#3B82F6] mb-3">
+            <div className="w-10 h-10 rounded-lg bg-[#2563EB]/20 flex items-center justify-center text-[#2563EB] mb-3">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
               </svg>
             </div>
-            <h3 className="text-sm font-semibold text-white group-hover:text-[#3B82F6] transition-colors">
+            <h3 className="text-sm font-semibold text-white group-hover:text-[#2563EB] transition-colors">
               New Blog Post
             </h3>
             <p className="text-xs text-[#64748B] mt-1">
@@ -141,7 +141,7 @@ export default function AdminDashboard() {
           <h2 className="text-lg font-semibold text-white">Recent Blog Posts</h2>
           <a
             href="/admin/blog"
-            className="text-sm text-[#3B82F6] hover:text-[#2563EB] transition-colors"
+            className="text-sm text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
           >
             View all
           </a>
@@ -150,7 +150,7 @@ export default function AdminDashboard() {
           {posts.length === 0 ? (
             <div className="p-8 text-center text-[#64748B]">
               <p>No blog posts yet.</p>
-              <a href="/admin/blog/new" className="text-[#3B82F6] text-sm mt-2 inline-block">
+              <a href="/admin/blog/new" className="text-[#2563EB] text-sm mt-2 inline-block">
                 Create your first post
               </a>
             </div>
@@ -187,7 +187,7 @@ export default function AdminDashboard() {
                       </p>
                     </td>
                     <td className="px-5 py-4 hidden sm:table-cell">
-                      <span className="text-xs font-medium text-[#3B82F6] bg-[#3B82F6]/10 px-2 py-1 rounded-full">
+                      <span className="text-xs font-medium text-[#2563EB] bg-[#2563EB]/10 px-2 py-1 rounded-full">
                         {post.category}
                       </span>
                     </td>
@@ -203,7 +203,7 @@ export default function AdminDashboard() {
                     <td className="px-5 py-4 text-right">
                       <a
                         href={`/admin/blog/${post.slug}/edit`}
-                        className="text-xs text-[#3B82F6] hover:text-[#2563EB] font-medium transition-colors"
+                        className="text-xs text-[#2563EB] hover:text-[#1D4ED8] font-medium transition-colors"
                       >
                         Edit
                       </a>
