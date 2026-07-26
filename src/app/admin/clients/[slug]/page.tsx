@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getSupabaseAdmin, ONBOARDING_TABLE, type OnboardingRow } from "@/lib/supabase";
+import DeleteClientButton from "@/components/admin/DeleteClientButton";
 
 export const dynamic = "force-dynamic";
 
@@ -94,13 +95,16 @@ export default async function ClientDetail({ params }: { params: Promise<{ slug:
         Back to all clients
       </Link>
 
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-white">{row.business_name || "Onboarding submission"}</h1>
-        <p className="text-[#64748B] text-sm mt-1">
-          Submitted {new Date(row.created_at).toLocaleString("en-AU", { dateStyle: "medium", timeStyle: "short" })}
-          {" · "}
-          <span className="capitalize">{row.status || "new"}</span>
-        </p>
+      <div className="mb-8 flex items-start justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold text-white">{row.business_name || "Onboarding submission"}</h1>
+          <p className="text-[#64748B] text-sm mt-1">
+            Submitted {new Date(row.created_at).toLocaleString("en-AU", { dateStyle: "medium", timeStyle: "short" })}
+            {" · "}
+            <span className="capitalize">{row.status || "new"}</span>
+          </p>
+        </div>
+        <DeleteClientButton id={row.id} businessName={row.business_name || ""} redirectTo="/admin/clients" />
       </div>
 
       <div className="space-y-5 max-w-3xl">

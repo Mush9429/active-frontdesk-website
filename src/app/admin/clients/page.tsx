@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getSupabaseAdmin, ONBOARDING_TABLE, type OnboardingRow } from "@/lib/supabase";
+import DeleteClientButton from "@/components/admin/DeleteClientButton";
 
 // Always fetch fresh on each request (no build-time static generation, no env vars needed at build).
 export const dynamic = "force-dynamic";
@@ -70,7 +71,7 @@ export default async function AdminClients() {
                 <th className="text-left text-xs font-medium text-[#64748B] uppercase tracking-wider px-5 py-3 hidden sm:table-cell">Industry</th>
                 <th className="text-left text-xs font-medium text-[#64748B] uppercase tracking-wider px-5 py-3 hidden md:table-cell">Submitted</th>
                 <th className="text-left text-xs font-medium text-[#64748B] uppercase tracking-wider px-5 py-3">Status</th>
-                <th className="text-right text-xs font-medium text-[#64748B] uppercase tracking-wider px-5 py-3">Details</th>
+                <th className="text-right text-xs font-medium text-[#64748B] uppercase tracking-wider px-5 py-3">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -93,10 +94,16 @@ export default async function AdminClients() {
                       {row.status || "new"}
                     </span>
                   </td>
-                  <td className="px-5 py-4 text-right">
-                    <Link href={`/admin/clients/${row.id}`} className="text-xs text-[#2563EB] hover:text-[#1D4ED8] font-medium transition-colors">
-                      View
-                    </Link>
+                  <td className="px-5 py-4">
+                    <div className="flex items-center justify-end gap-1">
+                      <Link
+                        href={`/admin/clients/${row.id}`}
+                        className="text-xs text-[#2563EB] hover:text-[#1D4ED8] font-medium transition-colors px-2"
+                      >
+                        View
+                      </Link>
+                      <DeleteClientButton id={row.id} businessName={row.business_name || ""} />
+                    </div>
                   </td>
                 </tr>
               ))}
