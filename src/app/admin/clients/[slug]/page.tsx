@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getSupabaseAdmin, ONBOARDING_TABLE, type OnboardingRow } from "@/lib/supabase";
 import DeleteClientButton from "@/components/admin/DeleteClientButton";
+import ClientBillingCard from "@/components/admin/ClientBillingCard";
 
 export const dynamic = "force-dynamic";
 
@@ -108,6 +109,14 @@ export default async function ClientDetail({ params }: { params: Promise<{ slug:
       </div>
 
       <div className="space-y-5 max-w-3xl">
+        <ClientBillingCard
+          id={row.id}
+          initialStatus={row.status}
+          initialJoinDate={row.join_date}
+          initialMonthlyFee={row.monthly_fee}
+          initialSetupFee={row.setup_fee}
+        />
+
         {groups.map((group) => (
           <div key={group.title} className="bg-[#111113] border border-[#1E293B] rounded-xl overflow-hidden">
             <div className="px-5 py-3 border-b border-[#1E293B]">

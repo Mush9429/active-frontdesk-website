@@ -37,4 +37,10 @@ export interface OnboardingRow {
   contact_email: string | null;
   industry: string | null;
   data: Record<string, string>;
+  /** Date the client actually went live / started being billed. Null until set. */
+  join_date: string | null;
+  /** Recurring monthly fee in AUD. Defaults to the standard $399 plan. */
+  monthly_fee: number;
+  /** One-off setup fee in AUD. Defaults to the standard $2,000 setup. */
+  setup_fee: number;
 }
