@@ -50,7 +50,6 @@ export default function Header() {
             {[
               { label: "How It Works", href: "/#how-it-works" },
               { label: "Features", href: "/#features" },
-              { label: "Pricing", href: "/#pricing" },
               { label: "Industries", href: "/#industries" },
               { label: "Blog", href: "/blog" },
             ].map((link) => (
@@ -101,7 +100,6 @@ export default function Header() {
           {[
             { label: "How It Works", href: "/#how-it-works" },
             { label: "Features", href: "/#features" },
-            { label: "Pricing", href: "/#pricing" },
             { label: "Industries", href: "/#industries" },
             { label: "Blog", href: "/blog" },
           ].map((link) => (

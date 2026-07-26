@@ -30,7 +30,6 @@ export default function Footer() {
                 { label: "How It Works", href: "/#how-it-works" },
                 { label: "Features", href: "/#features" },
                 { label: "Industries", href: "/#industries" },
-                { label: "Pricing", href: "/#pricing" },
                 { label: "FAQ", href: "/#faq" },
                 { label: "Blog", href: "/blog" },
               ].map((link) => (

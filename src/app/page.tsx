@@ -10,7 +10,6 @@ import Features from "@/components/Features";
 import WhyWeBuiltThis from "@/components/WhyWeBuiltThis";
 import IdealFor from "@/components/IdealFor";
 import AudioExplainer from "@/components/AudioExplainer";
-import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import BlogPreview from "@/components/BlogPreview";
 import FinalCTA from "@/components/FinalCTA";
@@ -35,7 +34,6 @@ export default function Home() {
         <Features />
         <WhyWeBuiltThis />
         <IdealFor />
-        <Pricing />
         <FAQ />
         <BlogPreview posts={posts} />
         <FinalCTA />
