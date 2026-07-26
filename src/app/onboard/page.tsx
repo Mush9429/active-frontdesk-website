@@ -228,6 +228,11 @@ export default function OnboardPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  // Spam protection: a hidden field real visitors never fill, and the time the form was first
+  // rendered (a genuine person filling a 5-step form always takes several seconds; bots submit
+  // near-instantly). Neither is shown to real users and neither is saved as business data.
+  const [honeypot, setHoneypot] = useState("");
+  const [formStartedAt] = useState(() => Date.now());
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -244,7 +249,7 @@ export default function OnboardPage() {
       const response = await fetch("/api/onboard", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, _hp: honeypot, _startedAt: formStartedAt }),
       });
       if (response.ok) {
         setSubmitted(true);
@@ -291,6 +296,18 @@ export default function OnboardPage() {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
+      {/* Honeypot — invisible to real visitors, some bots fill every field they find */}
+      <input
+        type="text"
+        name="fax"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+      />
+
       {/* Header */}
       <div className="bg-white border-b border-[#E2E8F0]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6">

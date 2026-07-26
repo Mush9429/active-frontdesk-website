@@ -43,4 +43,6 @@ export interface OnboardingRow {
   monthly_fee: number;
   /** One-off setup fee in AUD. Defaults to the standard $2,000 setup. */
   setup_fee: number;
+  /** Submitter's IP at time of onboarding submission, used for basic rate limiting. */
+  ip_address: string | null;
 }
