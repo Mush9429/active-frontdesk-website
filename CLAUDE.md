@@ -44,8 +44,11 @@ actual AI receptionist (Vapi + n8n) lives in a separate repo — see
 src/app/
   page.tsx                  Marketing homepage (Header, Hero, StatsBand, LogoMarquee,
                              ProblemStatement, BeforeAfter, HowItWorks, FeatureShowcase,
-                             Features, WhyWeBuiltThis, IdealFor, Pricing, FAQ, BlogPreview,
-                             FinalCTA, Footer)
+                             Features, WhyWeBuiltThis, IdealFor, FAQ, BlogPreview,
+                             FinalCTA, Footer). Pricing.tsx exists but is currently hidden
+                             (not rendered, no nav link) — re-add the import/render + the
+                             three "Pricing" nav links (Header desktop+mobile, Footer) to
+                             bring it back.
   blog/                     Public blog (SEO), posts read from content/blog/*.json
   privacy/, terms/          Static legal pages
   onboard/                  Public multi-step intake form for new clients (see below)
@@ -91,6 +94,13 @@ This is how a new client goes from "interested" to "ready to configure":
    calendar & booking prefs, transfer/escalation, pricing (for the knowledge base), extras.
 3. `POST /api/onboard` inserts into the `onboarding_submissions` Supabase table.
 4. Appears immediately in `/admin/clients` for setup.
+
+**Spam protection** (`/api/onboard/route.ts`): honeypot field (`name="fax"`, invisible/
+`tabIndex={-1}`/`aria-hidden`), a minimum-fill-time check (rejects <3s completions), and an
+IP-based rate limit (max 3/hour, backed by the `ip_address` column). None of this adds friction
+for a real user — it's there because the link, while not public today, is a plain URL that could
+get scraped or shared. Anti-spam fields (`_hp`, `_startedAt`) are stripped before anything is
+treated as business data.
 
 **Important history:** this used to write submissions to local disk (`fs.writeFile` into
 `content/onboarding/`), which **silently failed on Vercel** (serverless has no persistent
@@ -142,9 +152,13 @@ ephemeral/read-only outside of `/tmp`.
 
 ## Known Gaps / Not Yet Built
 
-- `/onboard`'s API route has no rate limiting or spam protection — fine for now (link is sent
-  directly, not public), reconsider if it ever gets linked publicly.
-- Admin Invoices and Analytics are stubs, waiting on further Supabase tables.
+- Admin Invoices and Analytics are stubs, waiting on further Supabase tables. Payment collection
+  is manual for now (bank transfer, invoiced from the dashboard once built) — no Stripe/payment
+  processor connected.
+- Pricing section is hidden site-wide (see Site Structure above) — a deliberate choice, not a bug.
+- A known Vapi prompt bug (declining to give an email sometimes triggers an unwanted transfer, or
+  gets acknowledged-but-ignored) was reported fixed in the other repo — not independently
+  re-verified from this repo's side.
 - No automated tests.
 - Blog CRUD API routes (`/api/admin/blog/*`) have no server-side auth check (page-level
   middleware only) — low risk today since the blog isn't sensitive data, but worth hardening
