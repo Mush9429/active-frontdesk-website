@@ -114,7 +114,7 @@ export default function AdminLayout({
             >
               {item.icon}
               {item.label}
-              {(item.label === "Clients" || item.label === "Invoices" || item.label === "Analytics") && (
+              {(item.label === "Invoices" || item.label === "Analytics") && (
                 <span className="ml-auto text-[10px] bg-[#1E293B] text-[#64748B] px-2 py-0.5 rounded-full">
                   Soon
                 </span>

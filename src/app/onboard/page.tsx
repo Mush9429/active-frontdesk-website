@@ -226,6 +226,8 @@ export default function OnboardPage() {
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<FormData>(initialForm);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -236,7 +238,8 @@ export default function OnboardPage() {
   const totalSteps = 5;
 
   const handleSubmit = async () => {
-    // Send form data via email or API
+    setSubmitting(true);
+    setError("");
     try {
       const response = await fetch("/api/onboard", {
         method: "POST",
@@ -245,17 +248,19 @@ export default function OnboardPage() {
       });
       if (response.ok) {
         setSubmitted(true);
+      } else {
+        const body = await response.json().catch(() => ({}));
+        setError(
+          body.error ||
+            "Something went wrong submitting your details. Please try again, or email us at hello@activefrontdesk.com.au."
+        );
       }
     } catch {
-      // Fallback: open mailto with form data
-      const subject = encodeURIComponent(`New Client Onboarding: ${form.businessName}`);
-      const body = encodeURIComponent(
-        Object.entries(form)
-          .map(([key, val]) => `${key}: ${val}`)
-          .join("\n")
+      setError(
+        "We couldn't reach our servers. Please check your connection and try again, or email us at hello@activefrontdesk.com.au."
       );
-      window.open(`mailto:hello@activefrontdesk.com.au?subject=${subject}&body=${body}`);
-      setSubmitted(true);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -641,12 +646,19 @@ export default function OnboardPage() {
           ) : (
             <button
               onClick={handleSubmit}
-              className="bg-[#2563EB] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#1D4ED8] transition-colors text-sm"
+              disabled={submitting}
+              className="bg-[#2563EB] text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#1D4ED8] transition-colors text-sm disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Submit & Start Setup
+              {submitting ? "Submitting…" : "Submit & Start Setup"}
             </button>
           )}
         </div>
+
+        {error && (
+          <p className="mt-4 text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+            {error}
+          </p>
+        )}
       </div>
     </div>
   );
