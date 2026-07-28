@@ -11,6 +11,44 @@ export default function Hero() {
       {/* Background glow */}
       <div className="hero-glow absolute inset-0 pointer-events-none" />
 
+      {/* Slow-drifting wave lines — decorative, respects prefers-reduced-motion (see globals.css) */}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        viewBox="0 0 1440 600"
+        preserveAspectRatio="xMidYMid slice"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          className="hero-wave hero-wave-1"
+          d="M-100,120 C 200,50 400,190 700,120 S 1100,50 1540,120"
+          stroke="#2563EB"
+          strokeOpacity="0.10"
+          strokeWidth="1.5"
+        />
+        <path
+          className="hero-wave hero-wave-2"
+          d="M-100,220 C 250,290 450,150 750,220 S 1150,290 1540,220"
+          stroke="#059669"
+          strokeOpacity="0.08"
+          strokeWidth="1.5"
+        />
+        <path
+          className="hero-wave hero-wave-3"
+          d="M-100,330 C 200,260 500,400 800,330 S 1200,260 1540,330"
+          stroke="#2563EB"
+          strokeOpacity="0.07"
+          strokeWidth="1.5"
+        />
+        <path
+          className="hero-wave hero-wave-4"
+          d="M-100,430 C 300,360 500,500 800,430 S 1200,360 1540,430"
+          stroke="#059669"
+          strokeOpacity="0.06"
+          strokeWidth="1.5"
+        />
+      </svg>
+
       <div ref={ref} className="fade-in-section max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-[#F8FAFC] text-[#475569] text-xs font-medium px-4 py-2 rounded-full mb-8 border border-[#E2E8F0]">
