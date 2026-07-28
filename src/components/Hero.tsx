@@ -2,6 +2,7 @@
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { CALENDLY_URL } from "@/lib/constants";
+import HeroCallAnimation from "./HeroCallAnimation";
 
 export default function Hero() {
   const ref = useScrollAnimation();
@@ -49,48 +50,57 @@ export default function Hero() {
         />
       </svg>
 
-      <div ref={ref} className="fade-in-section max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-[#F8FAFC] text-[#475569] text-xs font-medium px-4 py-2 rounded-full mb-8 border border-[#E2E8F0]">
-          <span className="w-1.5 h-1.5 bg-[#2563EB] rounded-full animate-pulse"></span>
-          Now serving tradies and hospitality across Australia
-        </div>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div ref={ref} className="fade-in-section text-center lg:text-left">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-[#F8FAFC] text-[#475569] text-xs font-medium px-4 py-2 rounded-full mb-8 border border-[#E2E8F0]">
+              <span className="w-1.5 h-1.5 bg-[#2563EB] rounded-full animate-pulse"></span>
+              Now serving tradies and hospitality across Australia
+            </div>
 
-        {/* Headline */}
-        <h1 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-[#0F172A] leading-[1.05] tracking-tight mb-6">
-          Never miss a<br />
-          <span className="text-[#2563EB]">job again.</span>
-        </h1>
+            {/* Headline */}
+            <h1 className="text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-extrabold text-[#0F172A] leading-[1.05] tracking-tight mb-6">
+              Never miss a<br />
+              <span className="text-[#2563EB]">job again.</span>
+            </h1>
 
-        {/* Subheading */}
-        <p className="text-lg sm:text-xl text-[#475569] leading-relaxed mb-10 max-w-2xl mx-auto">
-          Your own AI receptionist - answers every call, books the job, follows up after.
-          24/7, in your business, with a voice that actually sounds human.
-        </p>
+            {/* Subheading */}
+            <p className="text-lg sm:text-xl text-[#475569] leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0 lg:max-w-lg">
+              Your own AI receptionist - answers every call, books the job, follows up after.
+              24/7, in your business, with a voice that actually sounds human.
+            </p>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-[#2563EB] text-white font-semibold px-8 py-4 rounded-xl hover:bg-[#1D4ED8] transition-all text-base shadow-lg shadow-[#2563EB]/20 cursor-pointer"
-          >
-            Book a Demo
-          </a>
-          <a
-            href="#listen"
-            className="inline-flex items-center justify-center gap-2 border border-[#E2E8F0] text-[#475569] font-semibold px-8 py-4 rounded-xl hover:border-[#2563EB] hover:text-[#2563EB] transition-all text-base"
-          >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-            Listen to a Demo Call
-          </a>
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-[#2563EB] text-white font-semibold px-8 py-4 rounded-xl hover:bg-[#1D4ED8] transition-all text-base shadow-lg shadow-[#2563EB]/20 cursor-pointer"
+              >
+                Book a Demo
+              </a>
+              <a
+                href="#listen"
+                className="inline-flex items-center justify-center gap-2 border border-[#E2E8F0] text-[#475569] font-semibold px-8 py-4 rounded-xl hover:border-[#2563EB] hover:text-[#2563EB] transition-all text-base"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                Listen to a Demo Call
+              </a>
+            </div>
+          </div>
+
+          {/* Animated call → job booked → confirmed card stack */}
+          <div className="flex justify-center lg:justify-end">
+            <HeroCallAnimation />
+          </div>
         </div>
 
         {/* Trust badges */}
-        <div className="flex flex-wrap gap-6 justify-center">
+        <div className="flex flex-wrap gap-6 justify-center mt-14">
           {["Australian Built", "24/7 AI Receptionist", "No Lock-in Contracts", "Setup in 48 Hours"].map(
             (badge) => (
               <div

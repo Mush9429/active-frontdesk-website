@@ -26,6 +26,7 @@ export default function Home() {
       <main>
         <Hero />
         <AudioExplainer />
+        <IdealFor />
         <StatsBand />
         <LogoMarquee />
         <ProblemStatement />
@@ -35,7 +36,6 @@ export default function Home() {
         <FeatureShowcase />
         <Features />
         <WhyWeBuiltThis />
-        <IdealFor />
         <FAQ />
         <BlogPreview posts={posts} />
         <FinalCTA />
