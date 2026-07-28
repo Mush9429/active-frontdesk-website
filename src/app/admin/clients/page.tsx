@@ -8,7 +8,9 @@ export const dynamic = "force-dynamic";
 const statusStyles: Record<string, string> = {
   new: "bg-[#2563EB]/10 text-[#2563EB]",
   "in-progress": "bg-amber-500/10 text-amber-400",
+  trial: "bg-violet-500/10 text-violet-400",
   live: "bg-emerald-500/10 text-emerald-400",
+  churned: "bg-red-500/10 text-red-400",
 };
 
 function SetupNotice() {

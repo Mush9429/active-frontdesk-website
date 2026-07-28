@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import StatsBand from "@/components/StatsBand";
 import LogoMarquee from "@/components/LogoMarquee";
 import ProblemStatement from "@/components/ProblemStatement";
+import RevenueCalculator from "@/components/RevenueCalculator";
 import BeforeAfter from "@/components/BeforeAfter";
 import HowItWorks from "@/components/HowItWorks";
 import FeatureShowcase from "@/components/FeatureShowcase";
@@ -28,6 +29,7 @@ export default function Home() {
         <StatsBand />
         <LogoMarquee />
         <ProblemStatement />
+        <RevenueCalculator />
         <BeforeAfter />
         <HowItWorks />
         <FeatureShowcase />

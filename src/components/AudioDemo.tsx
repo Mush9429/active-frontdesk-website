@@ -45,7 +45,7 @@ function Waveform({
           <div
             key={i}
             className={`flex-1 rounded-full transition-colors pointer-events-none ${
-              played ? "bg-[#2563EB]" : "bg-[#E2E8F0]"
+              played ? "bg-[#60A5FA]" : "bg-[#334155]"
             }`}
             style={{ height: `${h}px` }}
           />
@@ -53,7 +53,7 @@ function Waveform({
       })}
       {interactive && (
         <div
-          className="absolute top-0 bottom-0 w-3 h-3 my-auto rounded-full bg-[#2563EB] border-2 border-white shadow-sm pointer-events-none -translate-x-1/2"
+          className="absolute top-0 bottom-0 w-3 h-3 my-auto rounded-full bg-[#60A5FA] border-2 border-[#0F172A] shadow-sm pointer-events-none -translate-x-1/2"
           style={{ left: `${progress}%` }}
         />
       )}
@@ -142,84 +142,96 @@ export default function AudioDemo({ src }: AudioDemoProps) {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 max-w-2xl mx-auto shadow-sm">
-      <div className="text-center mb-5">
-        <h4 className="font-bold text-[#0F172A] text-base">Live Call Demo</h4>
-        <p className="text-sm text-[#475569] mt-0.5">
-          Listen to how Active FrontDesk handles a real inbound call.
-        </p>
-      </div>
+    <div className="relative max-w-2xl mx-auto">
+      {/* Glow behind the card so it visually lifts off the white page background */}
+      <div
+        className="absolute -inset-4 rounded-3xl opacity-70 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse at center, rgba(37, 99, 235, 0.18) 0%, transparent 70%)" }}
+      />
 
-      {src ? (
-        <div className="space-y-3">
-          <audio
-            ref={audioRef}
-            src={src}
-            preload="metadata"
-            onTimeUpdate={handleTimeUpdate}
-            onLoadedMetadata={handleLoadedMetadata}
-            onDurationChange={handleLoadedMetadata}
-            onEnded={handleEnded}
-          />
-          <div className="flex items-center gap-4">
-            <button
-              onClick={togglePlay}
-              className="w-11 h-11 rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white flex items-center justify-center flex-shrink-0 transition-colors cursor-pointer"
-              aria-label={playing ? "Pause" : "Play"}
-            >
-              {playing ? (
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                </svg>
-              ) : (
+      <div className="relative bg-[#0F172A] rounded-2xl border border-[#2563EB]/30 p-6 shadow-2xl shadow-[#2563EB]/20">
+        <div className="text-center mb-5">
+          <div className="inline-flex items-center gap-1.5 bg-[#2563EB]/15 text-[#93C5FD] text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+            <span className="w-1.5 h-1.5 bg-[#60A5FA] rounded-full animate-pulse" />
+            Audio
+          </div>
+          <h4 className="font-bold text-white text-base">Live Call Demo</h4>
+          <p className="text-sm text-[#94A3B8] mt-0.5">
+            Listen to how Active FrontDesk handles a real inbound call.
+          </p>
+        </div>
+
+        {src ? (
+          <div className="space-y-3">
+            <audio
+              ref={audioRef}
+              src={src}
+              preload="metadata"
+              onTimeUpdate={handleTimeUpdate}
+              onLoadedMetadata={handleLoadedMetadata}
+              onDurationChange={handleLoadedMetadata}
+              onEnded={handleEnded}
+            />
+            <div className="flex items-center gap-4">
+              <button
+                onClick={togglePlay}
+                className="w-12 h-12 rounded-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white flex items-center justify-center flex-shrink-0 transition-colors cursor-pointer shadow-lg shadow-[#2563EB]/40"
+                aria-label={playing ? "Pause" : "Play"}
+              >
+                {playing ? (
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                )}
+              </button>
+              <div className="flex-1 space-y-1">
+                <Waveform
+                  progress={progress}
+                  interactive
+                  waveformRef={waveformRef}
+                  onPointerDown={handlePointerDown}
+                  onPointerMove={handlePointerMove}
+                  onPointerUp={handlePointerUp}
+                />
+                <div className="flex justify-between text-xs text-[#64748B]">
+                  <span>{formatTime(currentTime)}</span>
+                  <span>{formatTime(duration)}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            <div className="flex items-center gap-4">
+              <button
+                disabled
+                className="w-12 h-12 rounded-full bg-[#1E293B] text-[#64748B] flex items-center justify-center flex-shrink-0 cursor-not-allowed"
+              >
                 <svg className="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
                 </svg>
-              )}
-            </button>
-            <div className="flex-1 space-y-1">
-              <Waveform
-                progress={progress}
-                interactive
-                waveformRef={waveformRef}
-                onPointerDown={handlePointerDown}
-                onPointerMove={handlePointerMove}
-                onPointerUp={handlePointerUp}
-              />
-              <div className="flex justify-between text-xs text-[#94A3B8]">
-                <span>{formatTime(currentTime)}</span>
-                <span>{formatTime(duration)}</span>
+              </button>
+              <div className="flex-1 space-y-2">
+                <Waveform progress={0} interactive={false} />
+                <div className="flex justify-between text-xs text-[#64748B]">
+                  <span>0:00</span>
+                  <span className="text-[#60A5FA] font-medium">Audio demo coming soon</span>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      ) : (
-        <div className="space-y-3">
-          <div className="flex items-center gap-4">
-            <button
-              disabled
-              className="w-11 h-11 rounded-full bg-[#E2E8F0] text-[#94A3B8] flex items-center justify-center flex-shrink-0 cursor-not-allowed"
-            >
-              <svg className="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
+            <div className="bg-[#1E293B]/50 rounded-lg px-4 py-3 text-sm text-[#94A3B8] flex items-center gap-2 border border-[#334155]">
+              <svg className="w-4 h-4 flex-shrink-0 text-[#64748B]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
               </svg>
-            </button>
-            <div className="flex-1 space-y-2">
-              <Waveform progress={0} interactive={false} />
-              <div className="flex justify-between text-xs text-[#94A3B8]">
-                <span>0:00</span>
-                <span className="text-[#2563EB] font-medium">Audio demo coming soon</span>
-              </div>
+              A live call recording will appear here. Book a demo to hear your custom voice setup.
             </div>
           </div>
-          <div className="bg-[#F8FAFC] rounded-lg px-4 py-3 text-sm text-[#475569] flex items-center gap-2 border border-[#E2E8F0]">
-            <svg className="w-4 h-4 flex-shrink-0 text-[#94A3B8]" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-            </svg>
-            A live call recording will appear here. Book a demo to hear your custom voice setup.
-          </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

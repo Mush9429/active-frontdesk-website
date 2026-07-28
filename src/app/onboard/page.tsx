@@ -280,8 +280,9 @@ export default function OnboardPage() {
           </div>
           <h1 className="text-2xl font-bold text-[#0F172A] mb-3">You&apos;re all set!</h1>
           <p className="text-[#475569] mb-6">
-            We&apos;ve received your details. Our team will begin setting up your AI receptionist
-            and have you live within 48 hours. We&apos;ll be in touch shortly.
+            We&apos;ve received your details. Our team will begin setting up your free 1-month
+            trial and have you live within 48 hours. No card required — we&apos;ll be in touch
+            shortly.
           </p>
           <a
             href="/"

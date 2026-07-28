@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const STATUS_OPTIONS = ["new", "in-progress", "live", "churned"];
+const STATUS_OPTIONS = ["new", "in-progress", "trial", "live", "churned"];
 
 function formatAUD(n: number) {
   return n.toLocaleString("en-AU", { style: "currency", currency: "AUD", maximumFractionDigits: 0 });
