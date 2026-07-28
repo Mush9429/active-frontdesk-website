@@ -22,30 +22,30 @@ export default function Hero() {
       >
         <path
           className="hero-wave hero-wave-1"
-          d="M-100,120 C 200,50 400,190 700,120 S 1100,50 1540,120"
+          d="M -320,120 Q -240,84 -160,120 T 0,120 T 160,120 T 320,120 T 480,120 T 640,120 T 800,120 T 960,120 T 1120,120 T 1280,120 T 1440,120 T 1600,120 T 1760,120 T 1920,120"
           stroke="#2563EB"
-          strokeOpacity="0.10"
+          strokeOpacity="0.12"
           strokeWidth="1.5"
         />
         <path
           className="hero-wave hero-wave-2"
-          d="M-100,220 C 250,290 450,150 750,220 S 1150,290 1540,220"
+          d="M -320,220 Q -240,190 -160,220 T 0,220 T 160,220 T 320,220 T 480,220 T 640,220 T 800,220 T 960,220 T 1120,220 T 1280,220 T 1440,220 T 1600,220 T 1760,220 T 1920,220"
           stroke="#059669"
-          strokeOpacity="0.08"
+          strokeOpacity="0.10"
           strokeWidth="1.5"
         />
         <path
           className="hero-wave hero-wave-3"
-          d="M-100,330 C 200,260 500,400 800,330 S 1200,260 1540,330"
+          d="M -320,330 Q -240,290 -160,330 T 0,330 T 160,330 T 320,330 T 480,330 T 640,330 T 800,330 T 960,330 T 1120,330 T 1280,330 T 1440,330 T 1600,330 T 1760,330 T 1920,330"
           stroke="#2563EB"
-          strokeOpacity="0.07"
+          strokeOpacity="0.09"
           strokeWidth="1.5"
         />
         <path
           className="hero-wave hero-wave-4"
-          d="M-100,430 C 300,360 500,500 800,430 S 1200,360 1540,430"
+          d="M -320,430 Q -240,404 -160,430 T 0,430 T 160,430 T 320,430 T 480,430 T 640,430 T 800,430 T 960,430 T 1120,430 T 1280,430 T 1440,430 T 1600,430 T 1760,430 T 1920,430"
           stroke="#059669"
-          strokeOpacity="0.06"
+          strokeOpacity="0.08"
           strokeWidth="1.5"
         />
       </svg>
