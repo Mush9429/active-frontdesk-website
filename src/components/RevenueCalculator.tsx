@@ -23,6 +23,19 @@ export default function RevenueCalculator() {
   return (
     <section ref={ref} className="fade-in-section py-24 md:py-32">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <p className="text-[#2563EB] font-semibold text-sm uppercase tracking-widest mb-3">
+            Revenue Calculator
+          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] mb-4">
+            How much revenue are you losing?
+          </h2>
+          <p className="text-[#475569] text-lg max-w-2xl mx-auto">
+            Most tradies don&apos;t realise how much missed calls actually cost. Use the sliders
+            below to see what you&apos;re leaving on the table.
+          </p>
+        </div>
+
         <div className="bg-white rounded-2xl border border-[#E2E8F0] shadow-sm p-8 md:p-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div>
